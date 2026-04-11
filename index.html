@@ -1,915 +1,2237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>I love You 💖</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy Graduation Day!</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    * {
+    :root{
+      --dark-forest: #001D1B;
+      --deep-green: #1B4D3E;
+      --muted-olive: #8A7B4F;
+      --antique-gold: #C1A063;
+      --ivory-glow: #F1E9D2;
+      --misty-silver: #D3D6D4;
+
+      --shadow-soft: 0 10px 30px rgba(0,0,0,0.25);
+      --shadow-strong: 0 18px 40px rgba(0,0,0,0.35);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --transition: 0.35s ease;
+    }
+
+    *{
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    :root {
-      --bg1: #ffd9e8;
-      --bg2: #fff0f6;
-      --bg3: #ffe4ef;
-      --pink: #ff5c93;
-      --pink-dark: #e9427d;
-      --pink-light: #ffc1d6;
-      --rose: #ff7aa8;
-      --white: #ffffff;
-      --text: #6d3550;
-      --soft-text: #9c6580;
-      --shadow: 0 15px 35px rgba(255, 92, 147, 0.18);
-      --radius: 28px;
+    html{
+      scroll-behavior: smooth;
     }
 
-    body {
-      font-family: 'Fredoka', sans-serif;
-      background: linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
-      color: var(--text);
+    body{
+      font-family: 'Poppins', sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(193,160,99,0.12), transparent 25%),
+        linear-gradient(180deg, #001D1B 0%, #062824 45%, #001D1B 100%);
+      color: var(--ivory-glow);
       overflow-x: hidden;
-      min-height: 100vh;
     }
 
-    .hearts {
+    img{
+      width: 100%;
+      display: block;
+    }
+
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button{
+      border: none;
+      outline: none;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    section{
+      padding: 100px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .container{
+      width: min(1200px, 92%);
+      margin: 0 auto;
+    }
+
+    .section-tag{
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(193,160,99,0.14);
+      color: var(--ivory-glow);
+      font-size: 0.92rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 16px;
+    }
+
+    .section-title{
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title h2{
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .section-title p{
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--misty-silver);
+      line-height: 1.85;
+      font-size: 1rem;
+    }
+
+    .glass-card{
+      background: linear-gradient(180deg, rgba(27,77,62,0.92), rgba(0,29,27,0.96));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 26px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: var(--transition);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary{
+      background: var(--antique-gold);
+      color: var(--dark-forest);
+    }
+
+    .btn-primary:hover{
+      transform: translateY(-4px) scale(1.02);
+    }
+
+    .btn-secondary{
+      background: rgba(255,255,255,0.05);
+      color: var(--ivory-glow);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .btn-secondary:hover{
+      transform: translateY(-4px) scale(1.02);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .floating-lights{
       position: fixed;
       inset: 0;
       pointer-events: none;
-      overflow: hidden;
       z-index: 0;
+      overflow: hidden;
     }
 
-    .heart {
+    .floating-lights span{
       position: absolute;
-      bottom: -60px;
-      color: rgba(255, 92, 147, 0.35);
+      bottom: -100px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(193,160,99,0.18);
       animation: floatUp linear infinite;
-      font-size: 18px;
     }
 
-    @keyframes floatUp {
-      0% {
-        transform: translateY(0) translateX(0) scale(1);
+    .floating-lights span:nth-child(even){
+      background: rgba(241,233,210,0.12);
+      width: 7px;
+      height: 7px;
+    }
+
+    @keyframes floatUp{
+      0%{
+        transform: translateY(0) scale(0.8);
         opacity: 0;
       }
-      10% {
+      10%{
         opacity: 1;
       }
-      100% {
-        transform: translateY(-120vh) translateX(30px) scale(1.3);
+      100%{
+        transform: translateY(-120vh) scale(1.2);
         opacity: 0;
       }
     }
 
-    .container {
-      position: relative;
-      z-index: 1;
-      width: min(1150px, 92%);
-      margin: 0 auto;
-      padding: 28px 0 40px;
+    @keyframes fadeUp{
+      from{
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to{
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .hero {
-      background: rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      border-radius: 34px;
-      box-shadow: var(--shadow);
-      padding: 26px;
-      margin-bottom: 24px;
+    .reveal{
+      animation: fadeUp 0.9s ease both;
     }
 
-    .top-badges {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-
-    .mini-title {
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--pink);
-    }
-
-    .hero h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: clamp(2.5rem, 7vw, 5rem);
-      color: var(--pink-dark);
-      margin-top: 8px;
-      line-height: 1.2;
-    }
-
-    .badge-wrap {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .badge {
-      background: #fff;
-      color: var(--pink-dark);
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: 0.92rem;
-      font-weight: 600;
-      box-shadow: 0 8px 20px rgba(255, 92, 147, 0.1);
-    }
-
-    .hero-grid {
+    .grid-2{
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .grid-3{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
+    }
+
+    .grid-4{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 992px){
+      .grid-2,
+      .grid-3,
+      .grid-4{
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      section{
+        padding: 80px 0;
+      }
+    }
+
+    @media (max-width: 768px){
+      .grid-2,
+      .grid-3,
+      .grid-4{
+        grid-template-columns: 1fr;
+      }
+
+      .section-title{
+        margin-bottom: 40px;
+      }
+
+      .section-title p{
+        font-size: 0.97rem;
+      }
+    }
+
+        .hero-section{
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-grid{
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 36px;
       align-items: center;
     }
 
-    .hero-text h2 {
-      font-size: clamp(2rem, 4vw, 3.6rem);
-      line-height: 1.1;
-      margin-bottom: 16px;
-      color: var(--pink-dark);
+    .hero-text h1{
+      font-size: clamp(3rem, 7vw, 6.3rem);
+      line-height: 0.95;
+      margin-bottom: 22px;
+      font-weight: 800;
+      max-width: 780px;
     }
 
-    .hero-text p {
-      font-size: 1.08rem;
-      line-height: 1.8;
-      color: var(--soft-text);
-      max-width: 650px;
+    .gradient-text{
+      display: block;
+      color: var(--antique-gold);
+      text-shadow: 0 0 20px rgba(193,160,99,0.18);
     }
 
-    .btn-row {
+    .hero-text p{
+      max-width: 680px;
+      color: var(--misty-silver);
+      line-height: 1.9;
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons{
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
-      margin-top: 24px;
+      gap: 14px;
+      margin-bottom: 34px;
     }
 
-    button {
-      font-family: inherit;
-      border: none;
-      cursor: pointer;
-      transition: 0.25s ease;
+    .hero-mini-stats{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 620px;
     }
 
-    .btn-primary,
-    .btn-secondary,
-    .small-btn {
+    .mini-stat{
+      padding: 22px 18px;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .mini-stat:hover{
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .mini-stat h3{
+      font-size: 2rem;
+      color: var(--antique-gold);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .mini-stat p{
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--misty-silver);
+      line-height: 1.5;
+    }
+
+    .hero-visual{
+      position: relative;
+    }
+
+    .hero-image-card{
+      position: relative;
+      border-radius: 36px;
+      padding: 18px;
+      overflow: visible;
+    }
+
+    .hero-image-wrap{
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      min-height: 620px;
+    }
+
+    .hero-image-wrap img{
+      width: 100%;
+      height: 620px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .hero-image-card:hover .hero-image-wrap img{
+      transform: scale(1.05);
+    }
+
+    .hero-image-overlay{
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,29,27,0.08), rgba(0,29,27,0.4)),
+        radial-gradient(circle at top, rgba(193,160,99,0.18), transparent 35%);
+    }
+
+    .hero-badge{
+      position: absolute;
+      padding: 12px 18px;
       border-radius: 999px;
-      font-weight: 700;
+      background: rgba(0,29,27,0.82);
+      color: var(--ivory-glow);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.92rem;
+      backdrop-filter: blur(10px);
+      z-index: 3;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--pink), var(--rose));
-      color: white;
-      padding: 14px 24px;
-      box-shadow: 0 12px 24px rgba(255, 92, 147, 0.25);
+    .badge-top{
+      top: 34px;
+      left: -12px;
     }
 
-    .btn-secondary {
-      background: white;
-      color: var(--pink-dark);
-      padding: 14px 24px;
-      border: 2px solid #ffd0df;
+    .badge-bottom{
+      bottom: 135px;
+      right: -10px;
     }
 
-    .btn-primary:hover,
-    .btn-secondary:hover,
-    .small-btn:hover,
-    .game-card:hover,
-    .extra-card:hover,
-    .gallery-card:hover,
-    .reason-card:hover {
-      transform: translateY(-3px);
-    }
-
-    .hero-side {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid #ffd8e5;
-      border-radius: var(--radius);
+    .hero-floating-card{
+      position: absolute;
+      bottom: -24px;
+      left: -24px;
+      width: min(340px, 88%);
       padding: 22px;
-      box-shadow: var(--shadow);
+      border-radius: 24px;
+      z-index: 4;
     }
 
-    .section-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      color: var(--pink);
-      font-weight: 700;
+    .hero-floating-card span{
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--antique-gold);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .hero-floating-card h4{
+      font-size: 1.35rem;
       margin-bottom: 10px;
     }
 
-    .love-meter-number {
-      font-size: 4rem;
-      font-weight: 700;
-      text-align: center;
-      color: var(--pink-dark);
-      min-height: 90px;
-      display: grid;
-      place-items: center;
-    }
-
-    .card h3 {
-      font-size: 1.8rem;
-      color: var(--pink-dark);
-      margin-bottom: 8px;
-    }
-
-    .card p {
+    .hero-floating-card p{
+      font-size: 0.95rem;
+      color: var(--misty-silver);
       line-height: 1.7;
-      color: var(--soft-text);
     }
 
-    .answer-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 16px;
+    @media (max-width: 992px){
+      .hero-grid{
+        grid-template-columns: 1fr;
+      }
+
+      .hero-mini-stats{
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 100%;
+      }
+
+      .hero-image-wrap,
+      .hero-image-wrap img{
+        height: 520px;
+        min-height: 520px;
+      }
+
+      .hero-floating-card{
+        left: 16px;
+        bottom: 16px;
+      }
+
+      .badge-top{
+        top: 30px;
+        left: 20px;
+      }
+
+      .badge-bottom{
+        right: 20px;
+        bottom: 110px;
+      }
     }
 
-    .small-btn {
-      padding: 12px 18px;
-      background: #ffe5ef;
-      color: var(--pink-dark);
+    @media (max-width: 768px){
+      .hero-section{
+        min-height: auto;
+        padding-top: 70px;
+      }
+
+      .hero-mini-stats{
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image-wrap,
+      .hero-image-wrap img{
+        height: 420px;
+        min-height: 420px;
+      }
+
+      .hero-floating-card{
+        position: relative;
+        left: auto;
+        bottom: auto;
+        width: 100%;
+        margin-top: 16px;
+      }
+
+      .badge-top,
+      .badge-bottom{
+        position: absolute;
+        font-size: 0.82rem;
+        padding: 10px 14px;
+      }
+
+      .badge-top{
+        top: 16px;
+        left: 16px;
+      }
+
+      .badge-bottom{
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+    .memory-intro-grid{
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 30px;
+      align-items: stretch;
     }
 
-    .small-btn.primary {
-      background: linear-gradient(135deg, var(--pink), var(--rose));
-      color: white;
+    .memory-text-card{
+      border-radius: 30px;
+      padding: 34px;
+      height: 100%;
+      transition: var(--transition);
     }
 
-    .message-box {
-      margin-top: 14px;
-      background: #ffeaf2;
-      border-radius: 18px;
-      padding: 14px;
+    .memory-text-card:hover{
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .memory-text-top{
+      margin-bottom: 18px;
+    }
+
+    .memory-small-tag{
+      display: inline-block;
+      padding: 9px 15px;
+      border-radius: 999px;
+      background: rgba(193,160,99,0.16);
+      color: var(--antique-gold);
+      font-size: 0.85rem;
       font-weight: 600;
-      display: none;
-      color: var(--pink-dark);
+      margin-bottom: 14px;
     }
 
-    .features {
+    .memory-text-card h3{
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .memory-text-card p{
+      color: var(--misty-silver);
+      line-height: 1.9;
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    .memory-highlights{
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .memory-highlight{
+      padding: 18px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: var(--transition);
+    }
+
+    .memory-highlight:hover{
+      transform: translateY(-4px);
+      background: rgba(193,160,99,0.08);
+    }
+
+    .memory-highlight h4{
+      color: var(--antique-gold);
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .memory-highlight span{
+      color: var(--misty-silver);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      display: block;
+    }
+
+    .memory-photo-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .memory-photo-card{
+      position: relative;
+      overflow: hidden;
+      border-radius: 26px;
+      min-height: 240px;
+      transition: var(--transition);
+    }
+
+    .memory-photo-card.large{
+      grid-column: span 2;
+      min-height: 290px;
+    }
+
+    .memory-photo-card:hover{
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .memory-photo-card img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .memory-photo-card:hover img{
+      transform: scale(1.06);
+    }
+
+    .memory-photo-overlay{
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(0,29,27,0.08), rgba(0,29,27,0.62));
+    }
+
+    .memory-photo-overlay span{
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(0,29,27,0.75);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--ivory-glow);
+      font-size: 0.88rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    @media (max-width: 992px){
+      .memory-intro-grid{
+        grid-template-columns: 1fr;
+      }
+
+      .memory-highlights{
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px){
+      .memory-text-card{
+        padding: 26px 22px;
+      }
+
+      .memory-highlights{
+        grid-template-columns: 1fr;
+      }
+
+      .memory-photo-grid{
+        grid-template-columns: 1fr;
+      }
+
+      .memory-photo-card.large{
+        grid-column: span 1;
+      }
+
+      .memory-photo-card,
+      .memory-photo-card.large{
+        min-height: 240px;
+      }
+    }
+        .letters-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .letter-envelope{
+      position: relative;
+      border-radius: 28px;
+      padding: 28px 22px 22px;
+      overflow: hidden;
+      cursor: pointer;
+      min-height: 250px;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .letter-envelope:hover{
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: var(--shadow-strong);
+      border-color: rgba(193,160,99,0.25);
+    }
+
+    .envelope-top{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 78px;
+      background: linear-gradient(135deg, rgba(193,160,99,0.28), rgba(138,123,79,0.15));
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      opacity: 0.95;
+    }
+
+    .letter-avatar{
+      position: relative;
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 30px auto 16px;
+      border: 3px solid rgba(241,233,210,0.16);
+      box-shadow: var(--shadow-soft);
+      z-index: 2;
+    }
+
+    .letter-avatar img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .letter-info{
+      position: relative;
+      z-index: 2;
+    }
+
+    .letter-info h3{
+      font-size: 1.35rem;
+      margin-bottom: 4px;
+    }
+
+    .letter-info span{
+      display: block;
+      color: var(--misty-silver);
+      font-size: 0.93rem;
+      margin-bottom: 18px;
+    }
+
+    .open-letter-text{
+      display: inline-block;
+      position: relative;
+      z-index: 2;
+      color: var(--antique-gold);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(193,160,99,0.12);
+      transition: var(--transition);
+    }
+
+    .letter-envelope:hover .open-letter-text{
+      background: rgba(193,160,99,0.2);
+    }
+
+    .letter-modal{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 999;
+      backdrop-filter: blur(10px);
+    }
+
+    .letter-modal.active{
+      display: flex;
+      animation: fadeUp 0.35s ease;
+    }
+
+    .letter-modal-box{
+      width: min(1050px, 95%);
+      border-radius: 32px;
+      padding: 28px;
+      position: relative;
+    }
+
+    .letter-close{
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      color: var(--ivory-glow);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .letter-close:hover{
+      background: rgba(255,255,255,0.14);
+      transform: rotate(90deg);
+    }
+
+    .letter-modal-header{
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 22px;
+      padding-right: 46px;
+    }
+
+    .letter-modal-avatar{
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid rgba(241,233,210,0.14);
+      flex-shrink: 0;
+    }
+
+    .letter-modal-avatar img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .letter-modal-header h3{
+      font-size: 1.6rem;
+      margin-bottom: 4px;
+    }
+
+    .letter-modal-header span{
+      color: var(--misty-silver);
+      font-size: 0.95rem;
+    }
+
+    .letter-paper{
+      background: linear-gradient(180deg, rgba(241,233,210,0.96), rgba(235,228,208,0.93));
+      color: #2a2a2a;
+      max-height: 400px;   /* control height */
+      overflow-y: auto;    /* enables vertical scroll */
+      border-radius: 24px;
+      padding: 28px 24px;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
+      position: relative;
+    }
+
+    .letter-paper::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 29px,
+        rgba(0,0,0,0.04) 30px
+      );
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .letter-paper p{
+      position: relative;
+      z-index: 2;
+      font-size: 1rem;
+      line-height: 2;
+      white-space: pre-line;
+    }
+
+    @media (max-width: 992px){
+      .letters-grid{
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px){
+      .letters-grid{
+        grid-template-columns: 1fr;
+      }
+
+      .letter-envelope{
+        min-height: 220px;
+      }
+
+      .letter-modal-box{
+        padding: 22px;
+      }
+
+      .letter-modal-header{
+        align-items: flex-start;
+      }
+
+      .letter-paper{
+        padding: 22px 18px;
+      }
+    }
+    .memory-game-layout{
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .memory-game-panel,
+    .memory-side-card{
+      border-radius: 30px;
+      padding: 30px;
+      transition: var(--transition);
+    }
+
+    .memory-game-panel:hover,
+    .memory-side-card:hover{
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .memory-game-head{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .memory-game-head h3,
+    .memory-side-card h3{
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 10px;
+    }
+
+    .memory-game-head p,
+    .memory-side-card p{
+      color: var(--misty-silver);
+      line-height: 1.8;
+      font-size: 0.98rem;
+    }
+
+    .memory-game-stats{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .memory-badge{
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--misty-silver);
+      font-size: 0.9rem;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .memory-grid{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .memory-card{
+      position: relative;
+      height: 110px;
+      transform-style: preserve-3d;
+      transition: transform 0.55s ease;
+      cursor: pointer;
+    }
+
+    .memory-card.flipped,
+    .memory-card.matched{
+      transform: rotateY(180deg);
+    }
+
+    .memory-card-face{
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .memory-card-front{
+      background: linear-gradient(180deg, rgba(193,160,99,0.18), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--antique-gold);
+    }
+
+    .memory-card-back{
+      background: linear-gradient(180deg, rgba(27,77,62,0.98), rgba(0,29,27,1));
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--ivory-glow);
+      transform: rotateY(180deg);
+    }
+
+    .memory-card:hover{
+      transform: translateY(-4px);
+    }
+
+    .memory-card.flipped:hover,
+    .memory-card.matched:hover{
+      transform: rotateY(180deg) translateY(-4px);
+    }
+
+    .memory-actions{
+      margin-top: 22px;
+    }
+
+    .memory-win-message{
+      margin-top: 20px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(193,160,99,0.14);
+      border: 1px solid rgba(193,160,99,0.22);
+      color: var(--ivory-glow);
+      line-height: 1.8;
+      display: none;
+    }
+
+    .memory-side-points{
+      display: grid;
       gap: 14px;
       margin-top: 22px;
     }
 
-    .feature-box {
-      background: linear-gradient(135deg, #fff5f8, #ffe8f1);
-      border: 1px solid #ffd6e5;
-      border-radius: 24px;
-      padding: 18px;
+    .memory-point{
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: var(--transition);
     }
 
-    .feature-box .icon {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
+    .memory-point:hover{
+      transform: translateY(-4px);
+      background: rgba(193,160,99,0.08);
     }
 
-    .feature-box h4 {
-      color: var(--pink-dark);
+    .memory-point h4{
+      color: var(--antique-gold);
       margin-bottom: 6px;
-      font-size: 1.08rem;
+      font-size: 1rem;
     }
 
-    .feature-box p {
-      color: var(--soft-text);
-      line-height: 1.65;
-      font-size: 0.95rem;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 24px;
-    }
-
-    .reason-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .reason-card {
-      background: linear-gradient(135deg, #fff8fb, #ffeaf2);
-      border: 1px solid #ffdbe7;
-      border-radius: 22px;
-      padding: 16px;
-      transition: 0.25s ease;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 16px;
-    }
-
-    .gallery-card {
-      overflow: hidden;
-      border-radius: 22px;
-      background: #fff8fb;
-      border: 1px solid #ffd8e5;
-      transition: 0.25s ease;
-      box-shadow: 0 10px 20px rgba(255, 92, 147, 0.08);
-    }
-
-    .gallery-card img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
+    .memory-point span{
+      color: var(--misty-silver);
+      font-size: 0.92rem;
+      line-height: 1.7;
       display: block;
     }
 
-    .gallery-card p {
-      padding: 12px 14px 16px;
-      font-weight: 600;
-      color: var(--pink-dark);
+    @media (max-width: 992px){
+      .memory-game-layout{
+        grid-template-columns: 1fr;
+      }
     }
 
-    .bottom-grid {
+    @media (max-width: 768px){
+      .memory-game-panel,
+      .memory-side-card{
+        padding: 24px 20px;
+      }
+
+      .memory-game-head{
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .memory-grid{
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .memory-badge{
+        white-space: normal;
+      }
+    }
+    .wheel-layout{
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 24px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: start;
     }
 
-    .game-top {
+    .wheel-panel,
+    .wheel-side-card{
+      border-radius: 30px;
+      padding: 30px;
+      transition: var(--transition);
+    }
+
+    .wheel-panel:hover,
+    .wheel-side-card:hover{
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .wheel-head{
+      margin-bottom: 24px;
+    }
+
+    .wheel-head h3,
+    .wheel-side-card h3{
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 10px;
+    }
+
+    .wheel-head p,
+    .wheel-side-card p{
+      color: var(--misty-silver);
+      line-height: 1.8;
+      font-size: 0.98rem;
+    }
+
+    .wheel-area{
+      position: relative;
+      width: 100%;
       display: flex;
-      justify-content: space-between;
-      gap: 10px;
+      justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
+      margin: 18px 0 28px;
     }
 
-    .stat-row {
+    .wheel{
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      position: relative;
+      border: 10px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow-strong);
+      transition: transform 4s cubic-bezier(0.17, 0.67, 0.2, 1);
+      background:
+        conic-gradient(
+          #C1A063 0deg 45deg,
+          #1B4D3E 45deg 90deg,
+          #8A7B4F 90deg 135deg,
+          #F1E9D2 135deg 180deg,
+          #C1A063 180deg 225deg,
+          #1B4D3E 225deg 270deg,
+          #8A7B4F 270deg 315deg,
+          #F1E9D2 315deg 360deg
+        );
+    }
+
+    .wheel::before{
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border-radius: 50%;
+      background: rgba(0,29,27,0.12);
+    }
+
+    .wheel-center{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
       display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
+      align-items: center;
+      justify-content: center;
+      background: var(--dark-forest);
+      color: var(--ivory-glow);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      border: 4px solid rgba(255,255,255,0.08);
+      z-index: 3;
+      box-shadow: var(--shadow-soft);
     }
 
-    .stat-pill {
-      background: #ffe8f1;
-      color: var(--pink-dark);
-      padding: 9px 14px;
+    .wheel-pointer{
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-top: 36px solid var(--antique-gold);
+      z-index: 5;
+      filter: drop-shadow(0 6px 10px rgba(0,0,0,0.25));
+    }
+
+    .wheel-actions{
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .wheel-result{
+      border-radius: 22px;
+      padding: 18px 20px;
+      text-align: center;
+      color: var(--ivory-glow);
+      line-height: 1.8;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wheel-points{
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .wheel-point{
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: var(--transition);
+    }
+
+    .wheel-point:hover{
+      transform: translateY(-4px);
+      background: rgba(193,160,99,0.08);
+    }
+
+    .wheel-point h4{
+      color: var(--antique-gold);
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .wheel-point span{
+      color: var(--misty-silver);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      display: block;
+    }
+
+    @media (max-width: 992px){
+      .wheel-layout{
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px){
+      .wheel-panel,
+      .wheel-side-card{
+        padding: 24px 20px;
+      }
+
+      .wheel{
+        width: 290px;
+        height: 290px;
+      }
+
+      .wheel-center{
+        width: 76px;
+        height: 76px;
+        font-size: 0.9rem;
+      }
+    }
+    .gallery-layout{
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .gallery-main{
+      border-radius: 30px;
+      overflow: hidden;
+      padding: 14px;
+      transition: var(--transition);
+    }
+
+    .gallery-main:hover{
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .gallery-main-image{
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      min-height: 620px;
+    }
+
+    .gallery-main-image img{
+      width: 100%;
+      height: 620px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .gallery-main:hover .gallery-main-image img{
+      transform: scale(1.04);
+    }
+
+    .gallery-main-overlay{
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 28px;
+      background: linear-gradient(180deg, rgba(0,29,27,0.08), rgba(0,29,27,0.75));
+    }
+
+    .gallery-label{
+      display: inline-block;
+      padding: 9px 15px;
       border-radius: 999px;
+      background: rgba(193,160,99,0.18);
+      color: var(--ivory-glow);
+      font-size: 0.84rem;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .gallery-main-overlay h3{
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      line-height: 1.2;
+    }
+
+    .gallery-grid{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .gallery-card{
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      min-height: 195px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .gallery-card:hover{
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .gallery-card.active{
+      outline: 2px solid rgba(193,160,99,0.4);
+      box-shadow: 0 0 0 4px rgba(193,160,99,0.08);
+    }
+
+    .gallery-card img{
+      width: 100%;
+      height: 100%;
+      min-height: 195px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-card:hover img{
+      transform: scale(1.06);
+    }
+
+    .gallery-card-overlay{
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+      background: linear-gradient(180deg, rgba(0,29,27,0.1), rgba(0,29,27,0.72));
+      color: var(--ivory-glow);
       font-weight: 600;
       font-size: 0.95rem;
     }
 
-    .game-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-
-    .game-card {
-      aspect-ratio: 1/1;
-      border-radius: 24px;
-      font-size: 2rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #ff9fc0, #ff74a4);
-      color: white;
-      box-shadow: 0 10px 18px rgba(255, 92, 147, 0.18);
-    }
-
-    .game-card.flipped,
-    .game-card.matched {
-      background: #fff4f8;
-      color: var(--pink-dark);
-      border: 2px solid #ffc8da;
-    }
-
-    .win-box {
-      display: none;
-      margin-top: 16px;
-      background: #ffe8f1;
-      padding: 16px;
-      border-radius: 20px;
-      text-align: center;
-      font-weight: 700;
-      color: var(--pink-dark);
-    }
-
-    .extra-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 16px;
-    }
-
-    .extra-card {
-      border-radius: 24px;
-      padding: 20px;
-      min-height: 150px;
-      transition: 0.25s ease;
-      box-shadow: 0 12px 20px rgba(255, 92, 147, 0.1);
-    }
-
-    .extra-card:nth-child(1) {
-      background: linear-gradient(135deg, #ff82ae, #ff5c93);
-      color: white;
-    }
-
-    .extra-card:nth-child(2) {
-      background: #fff6fa;
-      border: 1px solid #ffd7e5;
-    }
-
-    .extra-card:nth-child(3) {
-      background: white;
-      border: 1px solid #ffd7e5;
-    }
-
-    .extra-card:nth-child(4) {
-      background: linear-gradient(135deg, #ffd6e7, #ffe8f3);
-      border: 1px solid #ffd7e5;
-    }
-
-    .extra-card .emoji {
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-
-    .extra-card h4 {
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-      color: inherit;
-    }
-
-    .extra-card p {
-      line-height: 1.65;
-      color: inherit;
-    }
-
-    footer {
-      text-align: center;
-      padding: 26px 12px 10px;
-      color: var(--pink-dark);
-      font-weight: 600;
-      font-size: 1.02rem;
-    }
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(118, 29, 66, 0.35);
-      backdrop-filter: blur(7px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-      padding: 20px;
-    }
-
-    .modal-content {
-      width: min(620px, 100%);
-      background: white;
-      border-radius: 34px;
-      padding: 30px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.14);
-      position: relative;
-      animation: pop 0.3s ease;
-    }
-
-    @keyframes pop {
-      from {
-        transform: scale(0.9) translateY(14px);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1) translateY(0);
-        opacity: 1;
-      }
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: #ffe6f0;
-      color: var(--pink-dark);
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-
-    .modal-content h3 {
-      font-size: 2rem;
-      color: var(--pink-dark);
-      margin: 10px 0 14px;
-    }
-
-    .modal-content p {
-      line-height: 1.9;
-      color: var(--soft-text);
-    }
-
-    .modal-note {
-      margin-top: 18px;
-      background: #fff4f8;
-      border-radius: 20px;
-      padding: 16px;
-      font-weight: 600;
-      color: var(--pink-dark);
-    }
-
-    .surprise-box {
-      text-align: center;
-      background: linear-gradient(135deg, #fff7fb, #ffe8f1);
-    }
-
-    .surprise-box .big {
-      font-size: 4rem;
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .grid-2,
-      .bottom-grid {
+    @media (max-width: 992px){
+      .gallery-layout{
         grid-template-columns: 1fr;
       }
 
-      .gallery-grid,
-      .features,
-      .extra-grid {
-        grid-template-columns: 1fr 1fr;
+      .gallery-main-image,
+      .gallery-main-image img{
+        min-height: 500px;
+        height: 500px;
       }
     }
 
-    @media (max-width: 640px) {
-      .container {
-        width: min(94%, 100%);
+    @media (max-width: 768px){
+      .gallery-main{
+        padding: 10px;
       }
 
-      .hero,
-      .card,
-      .modal-content {
+      .gallery-main-image,
+      .gallery-main-image img{
+        min-height: 360px;
+        height: 360px;
+      }
+
+      .gallery-grid{
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-card,
+      .gallery-card img{
+        min-height: 220px;
+      }
+
+      .gallery-main-overlay{
         padding: 20px;
       }
+    }
+    .final-message-card{
+      border-radius: 34px;
+      padding: 42px 34px;
+      background: linear-gradient(180deg, rgba(193,160,99,0.1), rgba(27,77,62,0.92));
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
 
-      .gallery-grid,
-      .features,
-      .extra-grid {
+    .final-message-card:hover{
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .final-message-card::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(193,160,99,0.18), transparent 34%);
+      pointer-events: none;
+    }
+
+    .final-message-card > *{
+      position: relative;
+      z-index: 2;
+    }
+
+    .final-message-top{
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 34px;
+    }
+
+    .final-message-top h2{
+      font-size: clamp(2.2rem, 5vw, 4.6rem);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .final-message-top p{
+      color: var(--misty-silver);
+      line-height: 1.9;
+      font-size: 1rem;
+    }
+
+    .final-message-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+
+    .final-message-block{
+      padding: 24px 22px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: var(--transition);
+    }
+
+    .final-message-block:hover{
+      transform: translateY(-5px);
+      background: rgba(193,160,99,0.08);
+    }
+
+    .final-message-block h3{
+      color: var(--antique-gold);
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    .final-message-block p{
+      color: var(--misty-silver);
+      line-height: 1.8;
+      font-size: 0.96rem;
+    }
+
+    .final-message-actions{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    @media (max-width: 992px){
+      .final-message-grid{
         grid-template-columns: 1fr;
       }
+    }
 
-      .game-grid {
-        gap: 10px;
+    @media (max-width: 768px){
+      .final-message-card{
+        padding: 30px 22px;
+        border-radius: 28px;
       }
 
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-
-      .hero-text h2,
-      .card h3 {
-        font-size: 1.7rem;
+      .final-message-top{
+        margin-bottom: 26px;
       }
     }
+    .site-footer{
+      padding: 24px 0 40px;
+      text-align: center;
+    }
+
+    .site-footer p{
+      color: var(--misty-silver);
+      font-size: 0.95rem;
+    }
+
+
   </style>
 </head>
 <body>
-  <div class="hearts" id="hearts"></div>
 
-  <div class="container">
-    <section class="hero">
-      <div class="top-badges">
-        <div>
-          <div class="mini-title">To Kuya Dwight </div>
-          <h1>I Lovest You 💖</h1>
+  <div class="floating-lights" aria-hidden="true">
+    <span style="left:5%; animation-duration:14s; animation-delay:0s;"></span>
+    <span style="left:14%; animation-duration:18s; animation-delay:2s;"></span>
+    <span style="left:24%; animation-duration:16s; animation-delay:1s;"></span>
+    <span style="left:35%; animation-duration:21s; animation-delay:3s;"></span>
+    <span style="left:46%; animation-duration:15s; animation-delay:1s;"></span>
+    <span style="left:56%; animation-duration:19s; animation-delay:4s;"></span>
+    <span style="left:67%; animation-duration:17s; animation-delay:2s;"></span>
+    <span style="left:78%; animation-duration:20s; animation-delay:5s;"></span>
+    <span style="left:89%; animation-duration:16s; animation-delay:0s;"></span>
+  </div>
+
+  <section id="home" class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-text reveal">
+        <span class="section-tag">For Joey 🎓</span>
+        <h1>
+          Congratulations,
+          <span class="gradient-text">Jawi!</span>
+        </h1>
+        <p>
+          Today is more than just your graduation. It’s a celebration of your journey—your growth, your strength, and everything you’ve overcome to reach this moment. From senior high school to becoming a future IT professional, this is only the beginning of something even greater. Your family is proud of you, believes in you, and will always be here for you.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#letters" class="btn btn-primary">Open Your Letters</a>
+          <a href="#games" class="btn btn-secondary">Play Your Gift</a>
         </div>
-        <div class="badge-wrap">
-          <div class="badge">Date with me</div>
-          <div class="badge">Hug me</div>
-          <div class="badge">Meet me</div>
+
+        <div class="hero-mini-stats">
+          <div class="mini-stat glass-card">
+            <h3>9</h3>
+            <p>Messages from Family</p>
+          </div>
+          <div class="mini-stat glass-card">
+            <h3>1</h3>
+            <p>Proud Graduate</p>
+          </div>
+          <div class="mini-stat glass-card">
+            <h3>∞</h3>
+            <p>Future Possibilities</p>
+          </div>
         </div>
       </div>
 
-      <div class="hero-grid">
-        <div class="hero-text">
-          <h2>This website is for you.</h2>
+      <div class="hero-visual reveal">
+        <div class="hero-image-card glass-card">
+          <div class="hero-image-wrap">
+            <img src="./images/jawigrad.png" alt="Joey graduation photo">
+            <div class="hero-image-overlay"></div>
+          </div>
+
+          <div class="hero-badge badge-top">🎓 Senior High Graduate</div>
+          <div class="hero-badge badge-bottom">💻 Future IT Professional</div>
+
+          <div class="hero-floating-card glass-card">
+            <span>Next Chapter</span>
+            <h4>Your Journey Begins</h4>
+            <p>
+              From memories made to a future waiting to be built. Keep learning, keep creating, and keep believing in yourself.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section id="memory-intro">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="section-tag">A Proud Family Moment</span>
+          <h2>From senior high to a future full of purpose</h2>
           <p>
-            I want you to know that I miss you very much. I'd love to see you next week <3 during the holidays
+            Joey, this moment is more than a graduation. It is the result of your hard work, your quiet strength, your growth, and the many things you have already overcome. As you move from senior high school to college and take the path toward Information Technology, this page stands as a reminder that your family sees you, believes in you, and is deeply proud of the person you are becoming.
           </p>
-
-          <div class="btn-row">
-            <button class="btn-primary" onclick="openModal('letterModal')">Open Love Letter</button>
-            <button class="btn-secondary" onclick="openModal('surpriseModal')">Press for Surprise</button>
-          </div>
-
-          <div class="features">
-            <div class="feature-box">
-              <div class="icon">💗</div>
-              <h4>Pogi</h4>
-              <p>You are the most pogiest man I know, lalo na pag bagong gupit 😍</p>
-            </div>
-            <div class="feature-box">
-              <div class="icon">🧩</div>
-              <h4>Puzzlier</h4>
-              <p>You are smart and witty you know a lot of intellectual games and for smart only puzzles</p>
-            </div>
-            <div class="feature-box">
-              <div class="icon">🎁</div>
-              <h4>Funny</h4>
-              <p>You're the funniest person I know hehe. your wit is just so ugh </p>
-            </div>
-          </div>
         </div>
 
-        <div class="hero-side">
-          <div class="card">
-            <div class="section-label">Love Meter</div>
-            <div class="love-meter-number" id="countdown">3</div>
-            <p style="text-align:center;">Computing how much I love you...</p>
+        <div class="memory-intro-grid">
+          <div class="memory-text-card glass-card reveal">
+            <div class="memory-text-top">
+              <span class="memory-small-tag">From Your Family</span>
+              <h3>A journey already worth celebrating</h3>
+            </div>
+
+            <p>
+              To us, this milestone is not only about finishing senior high school. It is about the way you kept going, the way you kept learning, and the way you continued to grow through challenges, delays, worries, and change. Your journey has already shown courage, resilience, and heart.
+            </p>
+
+            <p>
+              Your family sees so much in you: a kind heart, a humble spirit, a funny soul, a strong mind, and a future with so much potential. You are not only stepping into college—you are stepping into a bigger chapter of your life, carrying the skills, dreams, and character that will take you far.
+            </p>
+
+            <p>
+              As you begin your journey in IT, may you keep building, exploring, creating, and believing in yourself. This page is a small gift from the people who love you most—a collection of pride, memories, and reminders that no matter where life takes you, you will always have a family cheering you on.
+            </p>
+
+            <div class="memory-highlights">
+              <div class="memory-highlight">
+                <h4>Character</h4>
+                <span>Kind, humble, gentle, and deeply loved.</span>
+              </div>
+              <div class="memory-highlight">
+                <h4>Growth</h4>
+                <span>Built through effort, struggles, and courage.</span>
+              </div>
+              <div class="memory-highlight">
+                <h4>Future</h4>
+                <span>A promising path in college, IT, and beyond.</span>
+              </div>
+            </div>
           </div>
 
-          <div class="card">
-            <div class="section-label">Secret Check</div>
-            <h3>Do you know how loved you are?</h3>
-            <p>Pick the cutest answer below.</p>
-            <div class="answer-buttons">
-              <button class="small-btn primary" onclick="showAnswer()">So much</button>
-              <button class="small-btn" onclick="showAnswer()">Impossible to measure</button>
+          <div class="memory-photo-grid reveal">
+            <div class="memory-photo-card large glass-card">
+              <img src="./images/6.jpg" alt="Joey with family">
+              <div class="memory-photo-overlay">
+                <span>Always Loved</span>
+              </div>
             </div>
-            <div class="message-box" id="answerMessage">Correct. Reward unlocked: unlimited hugs, kisses, and baby treatment 💋</div>
+
+            <div class="memory-photo-card glass-card">
+              <img src="./images/15.jpg" alt="Joey school journey">
+              <div class="memory-photo-overlay">
+                <span>Senior High Journey</span>
+              </div>
+            </div>
+
+            <div class="memory-photo-card glass-card">
+              <img src="./images/17.png" alt="Joey future in IT">
+              <div class="memory-photo-overlay">
+                <span>Future in IT</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
-    <section class="grid-2">
-      <div class="card">
-        <div class="section-label">Reasons why</div>
-        <h3>Why I love you</h3>
-        <div class="reason-list">
-          <div class="reason-card">💌 You make ordinary days feel special.</div>
-          <div class="reason-card">💌 You make me smile without even trying.</div>
-          <div class="reason-card">💌 You are my comfort and safe place.</div>
-          <div class="reason-card">💌 You support me in little and big ways.</div>
-          <div class="reason-card">💌 You are so kind and understanding.</div>
-          <div class="reason-card">💌 You make love feel soft and easy.</div>
-        </div>
+    <section id="letters">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="section-tag">Family Letters</span>
+        <h2>Messages sealed with love</h2>
+        <p>
+          Each envelope holds a special message from a member of the family. Click any card to open the letter and read a heartfelt note made just for the graduate.
+        </p>
       </div>
 
-      <div class="card">
-        <div class="section-label">Cute gallery</div>
-        <h3>Cute memories</h3>
-        <div class="gallery-grid">
-          <div class="gallery-card">
-            <img src="https://scontent.fmnl33-3.fna.fbcdn.net/v/t39.30808-6/469035578_18250183729286134_707217695740671408_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=d75a4d&_nc_ohc=-VAht1msgjkQ7kNvwEJgaox&_nc_oc=AdomXr-tJ2FfeYNS8i06OKrk5dyfPg1Zg7TPb52bUrzKae5yk5E9H9qVOeTlp4uyQ-_p9E_Vji3Zj4_dP7LDRNvC&_nc_zt=23&_nc_ht=scontent.fmnl33-3.fna&_nc_gid=lfbQ2TXYPh9khs4dJRI2_Q&_nc_ss=7a32e&oh=00_AfysuNsj1Bz-VTLo535n8Vk7frM8F706YdZ-fW8bVp9XKg&oe=69CA9A1A" alt="Romantic pink flowers">
-            <p>Debut 18 of My Pinsan</p>
+      <div class="letters-grid">
+        <div class="letter-envelope glass-card" onclick="openLetter('Mamski', 'Mama', './images/mmama.png', `Hello Joey I’m feeling so proud as a mom for the person you have become. I know since you were still in my womb that you are extra special, a lovable person, and everyone’s friend. I guess nobody can ever feel bad about you. I hope that despite not coming up on stage for graduation, you still feel proud of your accomplishment. You have graduated not only from Senior High School, but also as a full stack developer equipped with the knowledge and skills you need, comparable to graduating from college. And yet, learning and achieving your dreams have just started. You will need to engage more, learn more, have more exposure, and the money will come next. As always, just remember that not a single second passes where you are not loved and cared for. We are so, so, so proud. I am so proud of you. Always remember too that what counts in life is a grateful heart. Always be kind, always pray, and take good care of your health. Congratulations, Jawi. Love you so dearly.
+          Mamski`)">
+          <div class="envelope-top"></div>
+          <div class="letter-avatar">
+            <img src="./images/mama.jpg" alt="Mamski avatar">
           </div>
-          <div class="gallery-card">
-            <img src="https://scontent.fmnl33-5.fna.fbcdn.net/v/t51.82787-15/551987093_18284806606286134_744157004707465566_n.webp?stp=dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=d75a4d&_nc_ohc=-e12zUiRR1QQ7kNvwG3epPI&_nc_oc=AdoyCfchfA6L-M38GFqnE3tAiaqj5Q-BgfMYVhIVZZ4DH-9MyrzcmFbzwf1WEWzSQlI028vxTtWaZ61vS3umkly-&_nc_zt=23&_nc_ht=scontent.fmnl33-5.fna&_nc_gid=lfbQ2TXYPh9khs4dJRI2_Q&_nc_ss=7a32e&oh=00_AfwOptZSLxAiW4PlnXo1sR2f18E_U_-N7YM3NjlJS8Smpg&oe=69CA8852" alt="Heart cookies">
-            <p>Gainza Trade Fair</p>
+          <div class="letter-info">
+            <h3>Mamski</h3>
+            <span>Mama</span>
           </div>
-          <div class="gallery-card">
-            <img src="https://scontent.fmnl33-3.fna.fbcdn.net/v/t39.30808-6/469370963_18250314625286134_8202818702001118961_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=d75a4d&_nc_ohc=qKjUIxy64H0Q7kNvwG2G70I&_nc_oc=AdqSQzypol4gKtNQ2TfSB7A0GSAF4zx0FchBSwClKPfbTTmyq6yF15pEyeCdr7DqYvFah5RuXWyekGnluX1gpMv2&_nc_zt=23&_nc_ht=scontent.fmnl33-3.fna&_nc_gid=lfbQ2TXYPh9khs4dJRI2_Q&_nc_ss=7a32e&oh=00_AfzVzJvr5gh65Cjypb5pyn1g2nxBJZTBYVlH0JoP7e-CEA&oe=69CA6AF6" alt="Pink balloons romantic aesthetic">
-            <p>Double date with Einjhel and Sigbin</p>
+          <div class="open-letter-text">Open Letter</div>
+        </div>
+
+        <div class="letter-envelope glass-card" onclick="openLetter('Papski', 'Papa', './images/papa.jpg', `Congratz, Tatz — and thank you!
+
+        • Senior high graduate ka na — at long last!
+        • Official marketer of the family!
+        • Official cook of the family!
+        • Official errand boy!
+        • At higit sa lahat — full-stack developer yow! Tapusin mo na kasi yung malupet mong first app! — Sebastian Way(eigh)!
+
+        You are ready — hindi lang for college, kundi for real-life fight.
+        At kung seseryosohin mo, hindi malabo na maka-land ka na ng first real job mo.
+
+        Sa totoo lang, lamang ka pa sa ibang IT graduates dyan na tapos daw ng malupet na university pero hindi makagawa kahit simpleng static website.
+
+        Pero syempre — gusto pa rin namin na magtapos ka!
+        Kasi Edgepoint ka e — walang Consultant na hindi graduate!
+        And make it quick na!
+
+        Excited ako sa future mo dahil alam kong malayo ang mararating mo.
+        Proud ako sa’yo. Hindi lang dahil sa skills at talino mo, kundi dahil mabuti kang tao.
+        You are kind, gentle, and humble.
+
+        Pasensya na kung wala tayong ceremonies today ha. Pero babawi ako! Times two!
+        Thank you for being a good son and for understanding us always!
+
+        Super proud ako sa’yo anak! I love you very much!
+
+        As always,
+
+        d’Paps`)">
+          <div class="envelope-top"></div>
+          <div class="letter-avatar">
+            <img src="./images/papa.jpg" alt="Dad avatar">
           </div>
+          <div class="letter-info">
+            <h3>Papski</h3>
+            <span>Papa</span>
+          </div>
+          <div class="open-letter-text">Open Letter</div>
+        </div>
+
+        <div class="letter-envelope glass-card" onclick="openLetter('Ate Maia', 'Older Sister', './images/atemaia.jpg', '--------')">
+          <div class="envelope-top"></div>
+          <div class="letter-avatar">
+            <img src="./images/atemaia.jpg" alt="Ate avatar">
+          </div>
+          <div class="letter-info">
+            <h3>Ate Maia</h3>
+            <span>Older Sister</span>
+          </div>
+          <div class="open-letter-text">Open Letter</div>
+        </div>
+
+        <div class="letter-envelope glass-card" onclick="openLetter('Kuya Angelo', 'Older Brother', './images/kuyaangelo.jpg', `Happy Graduation Jawi! Congratulations, I am so proud of you for achieving this milestone! You leveled up! I was given the opportunity to watch in the front row how you grew into a responsible, resilient, and reliable sibling who takes on new challenges and responsibilities in pursuit of learning and becoming better. It was an absolute cinema! The best part is, the series is still ongoing! You are more capable than you perceive and we are here to guide you and support you. I realized that you have two wonderful gifts: a brave heart and keen eyes. Once you nurture this heart with passion and focus your keen eyes in the right direction, your potential becomes limitless—your dreams are within arm’s reach once you align your mind with these gifts and turn your fantasies into legacies. And as your kuya, these victories that await you are in my list of favorite possibilities in this universe, that I cannot wait to witness. In this age, you have access to powerful resources to accelerate and scale your growth and create something for yourself. I pray that you learn to use them with wisdom and passion. I also pray for your vigilance and integrity as you navigate this world that is continuously being muddled by deception and is being robbed of humanity and creativity. I want to see you take what’s essential, start by picking up the pen and brush in turning visions into reality, and sail to the sea with a strong heart shouting “aal izz well.” Everyone is a free spirit, and within our spirit, we are nurturing three parts: the mind, the heart, and the body. And just like the natural way of life, the only way to grow them is through experience. Go out more, explore more, and always be curious! By now you should realize that most of us are eccentrics—we are a family of visionaries! Thank you so much, Jawi, for being a kind and funny sibling. You cheer us up and take care of us. We appreciate your efforts and you are always welcome home. We love you, and once again, congratulations! - Kuya`)">
+          <div class="envelope-top"></div>
+          <div class="letter-avatar">
+            <img src="./images/kuyaangelo.jpg" alt="Kuya avatar">
+          </div>
+          <div class="letter-info">
+            <h3>Kuya Angelo</h3>
+            <span>Older Brother</span>
+          </div>
+          <div class="open-letter-text">Open Letter</div>
+        </div>
+
+        <div class="letter-envelope glass-card" onclick="openLetter('Gab', 'Older Brother', './images/gab.jpg', `Congratulations bruv, salamat lagi alam mo na ’yan. Saka sa pagiging malupet, sa pagbibigay ng magandang vibes lagi sa amin.
+
+        Stress-free ka kasama, tapos ang ganda mo kausap. Bilib ako sa mga ginagawa mo.
+
+        More projects and more good vibesss!
+
+        Goodluckkk sa mga plans mo, dito lang kami for support lagi.
+
+        - your nakama`)">
+          <div class="envelope-top"></div>
+          <div class="letter-avatar">
+            <img src="./images/gab.jpg" alt="Gab avatar">
+          </div>
+          <div class="letter-info">
+            <h3>Gab</h3>
+            <span>Older Brother</span>
+          </div>
+          <div class="open-letter-text">Open Letter</div>
+        </div>
+
+        <div class="letter-envelope glass-card" onclick="openLetter('Tala', 'Older Sister', './images/tala.jpg', `Happy Graduation, Tato!! Another milestone you should be proud of. Learn from this—time accumulates even if you stop building your empire. Life has given you the gift of chances to equip you better for what’s about to come, so that you can be at ease and secure it once you have it. Education itself can’t be stolen from you, and so are your experiences. These become the skillset you would want to have. I know they come with stories of growth—losing a friend, having heartbreaks, family difficulties, financial worries, and self-growth. All of these build your character. Though time doesn’t measure who witnessed your journey, always be present. Even if no one is looking, never ever give up on yourself. Your morals and integrity to yourself—that’s what matters. By showing up for the real things, it reveals that beneath every performance, there’s a person behind it who matters to us too. We love you for your strengths, and have faith that your weaknesses are accepted. A student for a time—but my brother, for a lifetime, I care beyond what you can do. Do not settle for what you’re supposed to do. Be wild with your dreams, as stones are shaped by the persistent action of waves. - the sweetest Tala`)">
+          <div class="envelope-top"></div>
+          <div class="letter-avatar">
+            <img src="./images/tala.jpg" alt="Tala avatar">
+          </div>
+          <div class="letter-info">
+            <h3>Tala</h3>
+            <span>Older Sister</span>
+          </div>
+          <div class="open-letter-text">Open Letter</div>
+        </div>
+
+        <div class="letter-envelope glass-card" onclick="openLetter('Hana', 'Older Sister', './images/hana.jpg', `Hi jawiii Congratulation certified college student kana!! im so proud of you, so proud na your an advance student. Pag butihin mo lang lagi ang mga natututunan mo now, mas madami kana capabilities and mas madami na opportunities nagbubukas sayo. I know andami mong worries and stress dahil mejo nadelay ka ng konti I really see how you carried your problems and faced it. I'm amazed and happy na you're very strong and very brave. And I guarantee, I guarantee?? (joke) and i know you’ll do well kung saan ka mang field and kung ano man yan na work you’ll be successful in your career. Most of the time before, you’ll hear me lecturing you about your school stuff, your work, your responsibilities. But now I’ll lecture you about your lifestyle nyehehe. let me tell you something.--A good life matters more than just a good job.-- As an adult, I'm gonna share one thing sayo that I wish na makapag inspire sayo. If you want success you need to master the basics and everything will follow. Madalas mo ito madidinig, like a lot and you must think na it sound simple. But it took me years to realize na if i want to change something in my lifestyle I need to do it step by step, one at a time. I started focusing on simple things, how to properly do things. How to sleep properly (master sleeping on time and waking up on time), how to eat properly (master eating on time, eating a proper meal), how to do chores, how to work properly (with good place, timing, and right amount), and how to etc.. and these are things we do every day but ito din yung pinakanag ststruggle tayo maging consistent with and magawa in the right way. And that's the point. If we can’t master these simple things, how can we master other things that we want to achieve? A good lifestyle matters more than just a good job because your lifestyle is your foundation. Before you focus on building your career, focus on building your lifestyle, if your foundation is strong everything else, your work, your success, your future will follow.The thing is when you want to change a lot of things at one time that becomes a problem, you change 1 thing at a time. Ang ginawa ko sakin is nag set lng ako ng isang goal sa isang month and that is to sleep early and wakeup early non negotiable. And I’ve been doing that for a month na, it helped me a lot in focusing and managing my time. And this is the best thing na makakatulong sayo sa future plans mo. having a good lifestyle, specially sa profession na kukunin natin IT. I wish you well sa lahat ng plans and pangarap mo Congratulationss jawayyy!!`)">
+          
+          <div class="envelope-top"></div>
+
+          <div class="letter-avatar">
+            <img src="./images/hana.jpg" alt="Hana avatar">
+          </div>
+
+          <div class="letter-info">
+            <h3>Hana</h3>
+            <span>Older Sister</span>
+          </div>
+
+          <div class="open-letter-text">Open Letter</div>
+        </div>
+
+        <div class="letter-envelope glass-card" onclick="openLetter('Rain', 'Younger Brother', './images/rain.jpg', `Hi Joey, happy graduation! Congrats, more achievements to come, and sana happy ka today B)
+
+        Ingat ka palagi and study hard pag college mo, kaya mo 'yan—ez.`)">
+          <div class="envelope-top"></div>
+          <div class="letter-avatar">
+            <img src="./images/rain.jpg" alt="Rain avatar">
+          </div>
+          <div class="letter-info">
+            <h3>Rain</h3>
+            <span>Younger Brother</span>
+          </div>
+          <div class="open-letter-text">Open Letter</div>
+        </div>
+
+        <div class="letter-envelope glass-card" onclick="openLetter('Family', 'Family', './images/pamilya.jpg', 'Today we celebrate your achievement and the bright future in front of you. Continue learning, continue growing, and continue making your family proud. Your journey in IT can take you to great places, and we are excited to see everything you will accomplish.')">
+          <div class="envelope-top"></div>
+          <div class="letter-avatar">
+            <img src="./images/pamilya.jpg" alt="Tito avatar">
+          </div>
+          <div class="letter-info">
+            <h3>Family</h3>
+            <span>Family</span>
+          </div>
+          <div class="open-letter-text">Open Letter</div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="bottom-grid">
-      <div class="card">
-        <div class="game-top">
-          <div>
-            <div class="section-label">Mini Puzzle</div>
-            <h3>Love Match Game</h3>
-          </div>
-          <button class="small-btn primary" onclick="resetGame()">Shuffle</button>
-        </div>
-
-        <div class="stat-row">
-          <div class="stat-pill">Moves: <span id="moves">0</span></div>
-          <div class="stat-pill">Matched: <span id="matched">0</span>/4</div>
-        </div>
-
-        <div class="game-grid" id="gameGrid"></div>
-        <div class="win-box" id="winBox">You unlocked the prize: one giant hug and one big kiss 💖</div>
-      </div>
-
-      <div class="card">
-        <div class="section-label">Cute Extras</div>
-        <h3>Love Buttons</h3>
-
-        <div class="extra-grid">
-          <div class="extra-card">
-            <div class="emoji">🫶</div>
-            <h4>Virtual Hug</h4>
-            <p>Please redeem this in real life immediately.</p>
-          </div>
-          <div class="extra-card">
-            <div class="emoji">💋</div>
-            <h4>Kiss Coupon</h4>
-            <p>Valid forever. No expiration date.</p>
-          </div>
-          <div class="extra-card">
-            <div class="emoji">🍓</div>
-            <h4>Unlimited Meetups</h4>
-            <p>Soon pag hindi na busy hehehe. Im happy to be busy now</p>
-          </div>
-          <div class="extra-card">
-            <div class="emoji">🌙</div>
-            <h4>Date nights</h4>
-            <p>Soon also pag may kwarta na ulit</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      Made with so much love from one and only💗
-    </footer>
-  </div>
-
-  <div class="modal" id="letterModal">
-    <div class="modal-content">
-      <button class="close-btn" onclick="closeModal('letterModal')">✕</button>
-      <div style="font-size: 3.5rem;">💌</div>
-      <div class="section-label">Open Letter</div>
-      <h3>To my love,</h3>
+  <section id="games">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="section-tag">Interactive Game</span>
+      <h2>Match the milestone cards</h2>
       <p>
-        Thank you for being my hatid sundo boy kahit mataas ang presyo ng gas. I lovest youu I hope you are having a great day today. Ingat parati pag mag drive. Im learning a lot sa aking field and Im so amazed ma show itong website na toh. The power of AI hahaha this is just static but look how easy I could make it. Just learning how prompt engineering works. You gotta learn AI too very convenient + smart ways to do shits.
+        Enjoy flipping and matching the cards!
       </p>
-      <div class="modal-note">P.S. You are my favorite notification, favorite thought, and favorite person. ♡</div>
+    </div>
+
+    <div class="memory-game-layout">
+      <div class="memory-game-panel glass-card reveal">
+        <div class="memory-game-head">
+          <div>
+            <span class="game-mini-tag">A Game for Jawi</span>
+            <h3>Jawi’s Graduation Match Challenge</h3>
+            <p>
+              Flip two cards at a time and find all the matching pairs. Each symbol represents a part of your journey—from senior high memories to your next chapter in college and IT.
+            </p>
+          </div>
+
+          <div class="memory-game-stats">
+            <div class="memory-badge" id="memoryMoves">Moves: 0</div>
+            <div class="memory-badge" id="memoryPairs">Pairs: 0 / 6</div>
+          </div>
+        </div>
+
+        <div class="memory-grid" id="memoryGrid">
+          <!-- Cards will be generated by JavaScript -->
+        </div>
+
+        <div class="memory-actions">
+          <button class="btn btn-primary" onclick="resetMemoryGame()">Play Again</button>
+        </div>
+
+        <div class="memory-win-message" id="memoryWinMessage">
+          You matched every card—just like how every step, challenge, and lesson brought you to this moment. One chapter is complete, and a bigger journey in college and IT is waiting for you.
+        </div>
+      </div>
+
+      <div class="memory-side-card glass-card reveal">
+        <span class="game-mini-tag">A small tribute</span>
+        <h3>Every symbol tells part of your story</h3>
+        <p>
+          This little game is more than just a challenge. It reflects the things that now belong to your story: your graduation, your effort, your growth, your dreams, and the future you are starting to build for yourself.
+        </p>
+
+        <div class="memory-side-points">
+          <div class="memory-point">
+            <h4>Graduation</h4>
+            <span>A reminder of the milestone you worked hard for.</span>
+          </div>
+          <div class="memory-point">
+            <h4>Growth</h4>
+            <span>Each match reflects how far you’ve already come.</span>
+          </div>
+          <div class="memory-point">
+            <h4>Future in IT</h4>
+            <span>Your next chapter is full of learning, creating, and new opportunities.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section id="spin-wheel">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="section-tag">A Surprise for Jawi</span>
+      <h2>Spin for your next reminder</h2>
+      <p>
+        Every spin reveals a short message made for this new chapter of your life—one filled with growth, courage, dreams, and the future waiting for you in college and IT.
+      </p>
+    </div>
+
+    <div class="wheel-layout">
+      <div class="wheel-panel glass-card reveal">
+        <div class="wheel-head">
+          <div>
+            <span class="game-mini-tag">Spin the Wheel</span>
+            <h3>Jawi’s Inspiration Wheel</h3>
+            <p>
+              Press the button and let the wheel choose a message for your journey ahead.
+            </p>
+          </div>
+        </div>
+
+        <div class="wheel-area">
+          <div class="wheel-pointer"></div>
+          <div class="wheel" id="quoteWheel">
+            <div class="wheel-center">SPIN</div>
+          </div>
+        </div>
+
+        <div class="wheel-actions">
+          <button class="btn btn-primary" onclick="spinWheel()">Spin Now</button>
+        </div>
+
+        <div class="wheel-result glass-card" id="wheelResult">
+          Spin the wheel to reveal a message for your next chapter.
+        </div>
+      </div>
+
+      <div class="wheel-side-card glass-card reveal">
+        <span class="game-mini-tag">A little reminder</span>
+        <h3>For the road ahead</h3>
+        <p>
+          This part of the page is a small surprise made for you. Each spin gives a reminder that as you step into college, you carry with you not only dreams and potential, but also the love, support, and pride of your family.
+        </p>
+
+        <div class="wheel-points">
+          <div class="wheel-point">
+            <h4>Courage</h4>
+            <span>A reminder to keep going, even when things feel uncertain.</span>
+          </div>
+          <div class="wheel-point">
+            <h4>Growth</h4>
+            <span>Each message reflects the person you are still becoming.</span>
+          </div>
+          <div class="wheel-point">
+            <h4>Future</h4>
+            <span>Your next chapter in college and IT is full of possibility.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="section-tag">Memory Gallery</span>
+      <h2>Moments from your journey, Jawi</h2>
+      <p>
+        These are some of the moments that tell your story—your growth, your memories, your milestones, and the people who are proud to celebrate this chapter with you. From senior high school to your future in IT, every photo holds a piece of the journey that brought you here.
+      </p>
+    </div>
+
+    <div class="gallery-layout">
+      <div class="gallery-main glass-card reveal">
+        <div class="gallery-main-image">
+          <img id="featuredImage" src="./images/jawigrad.png" alt="Featured graduation memory">
+          <div class="gallery-main-overlay">
+            <div>
+              <span class="gallery-label">Featured Memory</span>
+              <h3 id="featuredTitle">A proud moment for Jawi and the whole family</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-side reveal">
+        <div class="gallery-grid">
+          <div class="gallery-card glass-card active" onclick="changeFeaturedImage(this, './images/jawigrad.png', 'A proud moment for Jawi and the whole family')">
+            <img src="./images/jawigrad.png" alt="Joey graduation day">
+            <div class="gallery-card-overlay">Graduation Day</div>
+          </div>
+
+          <div class="gallery-card glass-card" onclick="changeFeaturedImage(this, './images/13.jpg', 'The beginning of a future in IT and bigger dreams ahead')">
+            <img src="./images/13.jpg" alt="Joey future in IT">
+            <div class="gallery-card-overlay">Future in IT</div>
+          </div>
+
+          <div class="gallery-card glass-card" onclick="changeFeaturedImage(this, './images/7.jpg', 'A journey built with effort, growth, and courage')">
+            <img src="./images/7.jpg" alt="Joey senior high journey">
+            <div class="gallery-card-overlay">Senior High Journey</div>
+          </div>
+
+          <div class="gallery-card glass-card" onclick="changeFeaturedImage(this, './images/family.jpg', 'A family that celebrates, supports, and believes in you')">
+            <img src="./images/family.jpg" alt="Joey with family">
+            <div class="gallery-card-overlay">Family Pride</div>
+          </div>
+
+          <div class="gallery-card glass-card" onclick="changeFeaturedImage(this, './images/3.jpg', 'Dreams that are slowly turning into reality')">
+            <img src="./images/3.jpg" alt="Joey dreams and future">
+            <div class="gallery-card-overlay">Dreams Ahead</div>
+          </div>
+
+          <div class="gallery-card glass-card" onclick="changeFeaturedImage(this, './images/5.jpg', 'A milestone made through hard work and heart')">
+            <img src="./images/5.jpg" alt="Joey milestone">
+            <div class="gallery-card-overlay">Milestone</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="final-message">
+  <div class="container">
+    <div class="final-message-card glass-card reveal">
+      <div class="final-message-top">
+        <span class="section-tag">For You, Jawi</span>
+        <h2>This is only the beginning</h2>
+        <p>
+          Today is not just about finishing senior high school. It is about everything you went through to get here—the effort, the struggles, the growth, and the strength you showed even when things were not easy. This moment is yours, and you deserve to be proud of it.
+        </p>
+      </div>
+
+      <div class="final-message-grid">
+        <div class="final-message-block">
+          <h3>Your journey so far</h3>
+          <p>
+            You have already proven that you can face challenges, carry your responsibilities, and keep moving forward. Every step you took—no matter how small—brought you to this milestone. And that alone shows how strong and capable you are.
+          </p>
+        </div>
+
+        <div class="final-message-block">
+          <h3>Your future in IT</h3>
+          <p>
+            As you step into college and continue your journey in Information Technology, remember that you are not starting from zero—you are already ahead. Keep learning, keep building, and keep creating. Your future is something you will build with your own hands.
+          </p>
+        </div>
+
+        <div class="final-message-block">
+          <h3>From all of us</h3>
+          <p>
+            No matter where life takes you, never forget this: your family is always proud of you. We see your effort, we believe in your dreams, and we will always be here to support you. You are loved more than you know.
+          </p>
+        </div>
+      </div>
+
+      <div class="final-message-actions">
+        <a href="#home" class="btn btn-primary">Back to the Beginning</a>
+        <a href="#letters" class="btn btn-secondary">Read the Letters Again</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Made with love for a very special graduation day.</p>
+  </div>
+</footer>
+
+  <div class="letter-modal" id="letterModal">
+    <div class="letter-modal-box glass-card">
+      <button class="letter-close" onclick="closeLetter()">✕</button>
+
+      <div class="letter-modal-header">
+        <div class="letter-modal-avatar">
+          <img id="modalAvatar" src="" alt="Family member avatar">
+        </div>
+        <div>
+          <h3 id="modalName">Name</h3>
+          <span id="modalRole">Relationship</span>
+        </div>
+      </div>
+
+      <div class="letter-paper">
+        <p id="modalMessage"></p>
+      </div>
     </div>
   </div>
 
-  <div class="modal" id="surpriseModal">
-    <div class="modal-content surprise-box">
-      <button class="close-btn" onclick="closeModal('surpriseModal')">✕</button>
-      <div class="big">🐻💖</div>
-      <h3>Surprise!</h3>
-      <p>You just unlocked 1000 points of being the pogiest boyfriend ever.</p>
-      <div class="modal-note">Special bonus: lucky draw! you'll get an I love you kiss virtually.</div><br>
-      <img src="https://i.pinimg.com/originals/af/d5/90/afd59076d2f49760050ab0c223869f54.gif">
-    </div>
-  </div>
 
-  <script>
-    function createHearts() {
-      const hearts = document.getElementById('hearts');
-      for (let i = 0; i < 22; i++) {
-        const heart = document.createElement('div');
-        heart.className = 'heart';
-        heart.innerHTML = '💖';
-        heart.style.left = Math.random() * 100 + '%';
-        heart.style.animationDuration = (8 + Math.random() * 8) + 's';
-        heart.style.animationDelay = (Math.random() * 6) + 's';
-        heart.style.fontSize = (16 + Math.random() * 22) + 'px';
-        hearts.appendChild(heart);
+<script>
+  function openLetter(name, role, avatar, message) {
+    document.getElementById('modalName').textContent = name;
+    document.getElementById('modalRole').textContent = role;
+    document.getElementById('modalAvatar').src = avatar;
+    document.getElementById('modalMessage').textContent = message;
+    document.getElementById('letterModal').classList.add('active');
+  }
+
+  function closeLetter() {
+    document.getElementById('letterModal').classList.remove('active');
+  }
+
+  window.addEventListener('click', function(e) {
+    const modal = document.getElementById('letterModal');
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  const memoryIcons = ['🎓', '💻', '🏫', '📚', '🏆', '⭐'];
+  let firstCard = null;
+  let secondCard = null;
+  let lockBoard = false;
+  let moves = 0;
+  let matchedPairs = 0;
+
+  function createMemoryGame() {
+    const memoryGrid = document.getElementById('memoryGrid');
+    const memoryMoves = document.getElementById('memoryMoves');
+    const memoryPairs = document.getElementById('memoryPairs');
+    const memoryWinMessage = document.getElementById('memoryWinMessage');
+
+    if (!memoryGrid || !memoryMoves || !memoryPairs || !memoryWinMessage) return;
+
+    memoryGrid.innerHTML = '';
+    memoryWinMessage.style.display = 'none';
+    moves = 0;
+    matchedPairs = 0;
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+
+    memoryMoves.textContent = 'Moves: 0';
+    memoryPairs.textContent = 'Pairs: 0 / 6';
+
+    const memoryCards = [...memoryIcons, ...memoryIcons].sort(() => Math.random() - 0.5);
+
+    memoryCards.forEach((icon) => {
+      const card = document.createElement('div');
+      card.className = 'memory-card';
+      card.dataset.icon = icon;
+
+      card.innerHTML = `
+        <div class="memory-card-face memory-card-front">✦</div>
+        <div class="memory-card-face memory-card-back">${icon}</div>
+      `;
+
+      card.addEventListener('click', flipMemoryCard);
+      memoryGrid.appendChild(card);
+    });
+  }
+
+  function flipMemoryCard() {
+    if (lockBoard) return;
+    if (this === firstCard) return;
+    if (this.classList.contains('matched')) return;
+
+    this.classList.add('flipped');
+
+    if (!firstCard) {
+      firstCard = this;
+      return;
+    }
+
+    secondCard = this;
+    lockBoard = true;
+    moves++;
+    document.getElementById('memoryMoves').textContent = `Moves: ${moves}`;
+
+    checkMemoryMatch();
+  }
+
+  function checkMemoryMatch() {
+    const isMatch = firstCard.dataset.icon === secondCard.dataset.icon;
+
+    if (isMatch) {
+      firstCard.classList.add('matched');
+      secondCard.classList.add('matched');
+      matchedPairs++;
+      document.getElementById('memoryPairs').textContent = `Pairs: ${matchedPairs} / 6`;
+
+      resetMemoryTurn();
+
+      if (matchedPairs === 6) {
+        document.getElementById('memoryWinMessage').style.display = 'block';
       }
+    } else {
+      setTimeout(() => {
+        firstCard.classList.remove('flipped');
+        secondCard.classList.remove('flipped');
+        resetMemoryTurn();
+      }, 900);
     }
+  }
 
-    function startCountdown() {
-      const countdown = document.getElementById('countdown');
-      let num = 3;
-      const interval = setInterval(() => {
-        if (num > 1) {
-          num--;
-          countdown.textContent = num;
-        } else {
-          clearInterval(interval);
-          countdown.innerHTML = '∞/10';
-        }
-      }, 1000);
-    }
+  function resetMemoryTurn() {
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+  }
 
-    function showAnswer() {
-      document.getElementById('answerMessage').style.display = 'block';
-    }
+  function resetMemoryGame() {
+    createMemoryGame();
+  }
 
-    function openModal(id) {
-      document.getElementById(id).style.display = 'flex';
-    }
+  window.addEventListener('DOMContentLoaded', function() {
+    createMemoryGame();
+  });
 
-    function closeModal(id) {
-      document.getElementById(id).style.display = 'none';
-    }
+    const wheelQuotes = [
+      "Stay hungry, stay foolish. — Steve Jobs",
+      "The best way to predict the future is to create it. — Peter Drucker",
+      "Success is not final, failure is not fatal: it is the courage to continue that counts. — Winston Churchill",
+      "Don’t watch the clock; do what it does. Keep going. — Sam Levenson",
+      "Opportunities don't happen. You create them. — Chris Grosser",
+      "The only way to do great work is to love what you do. — Steve Jobs",
+      "Dream big and dare to fail. — Norman Vaughan",
+      "It always seems impossible until it’s done. — Nelson Mandela",
+      "Your time is limited, so don’t waste it living someone else’s life. — Steve Jobs",
+      "Do something today that your future self will thank you for. — Sean Patrick Flanery",
+      "Small steps in the right direction can turn out to be the biggest step of your life.",
+      "Push yourself, because no one else is going to do it for you.",
+      "Great things never come from comfort zones.",
+      "Success usually comes to those who are too busy to be looking for it. — Henry David Thoreau",
+      "The future depends on what you do today. — Mahatma Gandhi"
+    ];
 
-    window.onclick = function (event) {
-      const letterModal = document.getElementById('letterModal');
-      const surpriseModal = document.getElementById('surpriseModal');
-      if (event.target === letterModal) letterModal.style.display = 'none';
-      if (event.target === surpriseModal) surpriseModal.style.display = 'none';
-    };
+  let currentWheelRotation = 0;
+  let wheelSpinning = false;
 
-    const emojis = ['💗', '🌷', '🐻', '🍓', '💗', '🌷', '🐻', '🍓'];
-    let cards = [];
-    let flippedCards = [];
-    let matchedPairs = 0;
-    let moves = 0;
-    let lockBoard = false;
+  function spinWheel() {
+    if (wheelSpinning) return;
 
-    function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    }
+    const wheel = document.getElementById('quoteWheel');
+    const wheelResult = document.getElementById('wheelResult');
+    if (!wheel || !wheelResult) return;
 
-    function setupGame() {
-      const grid = document.getElementById('gameGrid');
-      grid.innerHTML = '';
-      cards = shuffleArray([...emojis]);
-      flippedCards = [];
-      matchedPairs = 0;
-      moves = 0;
-      lockBoard = false;
-      document.getElementById('moves').textContent = moves;
-      document.getElementById('matched').textContent = matchedPairs;
-      document.getElementById('winBox').style.display = 'none';
+    wheelSpinning = true;
 
-      cards.forEach((emoji, index) => {
-        const button = document.createElement('button');
-        button.className = 'game-card';
-        button.dataset.index = index;
-        button.dataset.emoji = emoji;
-        button.dataset.flipped = 'false';
-        button.innerHTML = '?';
-        button.onclick = () => flipCard(button);
-        grid.appendChild(button);
-      });
-    }
+    const randomIndex = Math.floor(Math.random() * wheelQuotes.length);
+    const extraRotation = 1440 + Math.floor(Math.random() * 720);
+    currentWheelRotation += extraRotation;
 
-    function flipCard(card) {
-      if (lockBoard) return;
-      if (card.classList.contains('flipped') || card.classList.contains('matched')) return;
-      if (flippedCards.length === 2) return;
+    wheel.style.transform = `rotate(${currentWheelRotation}deg)`;
 
-      card.classList.add('flipped');
-      card.innerHTML = card.dataset.emoji;
-      flippedCards.push(card);
+    setTimeout(() => {
+      wheelResult.textContent = wheelQuotes[randomIndex];
+      wheelSpinning = false;
+    }, 4000);
+  }
+    function changeFeaturedImage(card, imageSrc, title) {
+    const featuredImage = document.getElementById('featuredImage');
+    const featuredTitle = document.getElementById('featuredTitle');
+    const allCards = document.querySelectorAll('.gallery-card');
 
-      if (flippedCards.length === 2) {
-        moves++;
-        document.getElementById('moves').textContent = moves;
-        checkMatch();
-      }
-    }
+    if (!featuredImage || !featuredTitle) return;
 
-    function checkMatch() {
-      lockBoard = true;
-      const [card1, card2] = flippedCards;
+    featuredImage.src = imageSrc;
+    featuredTitle.textContent = title;
 
-      if (card1.dataset.emoji === card2.dataset.emoji) {
-        setTimeout(() => {
-          card1.classList.add('matched');
-          card2.classList.add('matched');
-          matchedPairs++;
-          document.getElementById('matched').textContent = matchedPairs;
-          flippedCards = [];
-          lockBoard = false;
+    allCards.forEach(item => item.classList.remove('active'));
+    card.classList.add('active');
+  }
+</script>
 
-          if (matchedPairs === 4) {
-            document.getElementById('winBox').style.display = 'block';
-          }
-        }, 400);
-      } else {
-        setTimeout(() => {
-          card1.classList.remove('flipped');
-          card2.classList.remove('flipped');
-          card1.innerHTML = '?';
-          card2.innerHTML = '?';
-          flippedCards = [];
-          lockBoard = false;
-        }, 850);
-      }
-    }
 
-    function resetGame() {
-      setupGame();
-    }
 
-    createHearts();
-    startCountdown();
-    setupGame();
-  </script>
+
+
 </body>
 </html>
